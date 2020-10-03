@@ -10,6 +10,11 @@ class TimeService {
         date.setDate(date.getDate() + days)
         return date
     }
+
+    static dateToString(date) {
+        const dateString = `${date.getYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours}:${date.getMinutes()}:${date.getSeconds()}:${date.getMilliseconds()}`
+        return dateString
+    }
 }
 
 module.exports = TimeService

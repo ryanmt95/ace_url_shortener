@@ -10,7 +10,7 @@ class ShortenerController {
         const createdDate = TimeService.getCurrentDateTime()
         const expiryDate = TimeService.getFutureDateTime(createdDate, linkValidityInDays)
 
-        var shortened_url = HashService.getShortenedURL(url)
+        var shortened_url = HashService.getShortenedURL(url, TimeService.dateToString(createdDate))
 
         res.status(200).send({ shortened_url: shortened_url })
     }
