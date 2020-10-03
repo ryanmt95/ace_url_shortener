@@ -14,6 +14,18 @@ const urlSchema = new Schema(
             unique: false,
             required: true
         },
+
+        createdDate: {
+            type: Date,
+            unique: false,
+            required: true
+        },
+
+        expiryDate: {
+            type: Date,
+            unique: false,
+            required: true
+        }
     },
     { collection: 'URLs' }
 )

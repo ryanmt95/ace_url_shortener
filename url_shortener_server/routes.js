@@ -1,5 +1,5 @@
-const ShortenerController = require('./controllers/shortenerController')
+const URLController = require('./controllers/urlController')
 
 module.exports = (app) => {
-    app.post('/shortenURL', ShortenerController.getShortenedURL)
+    app.post('/shortenURL', URLController.getShortenedURL)
 }
