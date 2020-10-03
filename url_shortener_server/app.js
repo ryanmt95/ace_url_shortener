@@ -22,3 +22,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true,
 }));
+
+//API routes for application
+require('./routes.js')(app);
