@@ -1,3 +1,5 @@
+const ShortenerController = require('./controllers/shortenerController')
+
 module.exports = (app) => {
-    app.get('/shortenURL', () => { console.log("Hello") })
+    app.post('/shortenURL', ShortenerController.getShortenedURL)
 }

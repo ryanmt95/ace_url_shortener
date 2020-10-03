@@ -1,5 +1,12 @@
 const crypto = require('crypto')
 
-class hashService {
+class HashService {
 
+    static hash = crypto.createHash('md5')
+
+    static getShortenedURL(url) {
+        return url
+    }
 }
+
+module.exports = HashService
