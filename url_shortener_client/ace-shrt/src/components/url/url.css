@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    padding-bottom: 1em;
+}
