@@ -9,3 +9,21 @@ Client - https://ace-shrt.herokuapp.com/
 Server - https://ace-shrt-server.herokuapp.com/
 
 MongoDB is used for persistence of the shortened URLS across system reboots. A non-relational database was used as MongoDB offers a free service. 
+
+## How to start app 
+
+Client 
+
+```javascript
+// to start app
+npm start 
+```
+
+Server
+```javascript
+// to start app
+npm start 
+
+// to run unit tests
+npm test
+```
