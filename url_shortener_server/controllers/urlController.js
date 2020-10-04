@@ -33,11 +33,15 @@ class URLController {
         const hashedURL = req.params.hashedURL
         URLModel.find(hashedURL)
             .then(doc => {
-                if (doc) {
-                    const { url } = doc
-                    res.status(200).redirect(url)
-                } else {
+                if (doc == null) {
                     res.status(404).send({ message: "No valid URL found for provided hashed URL" })
+                } else {
+                    const { url, expiryDate } = doc
+                    if (TimeService.checkExpiryDate(expiryDate)) {
+                        res.status(404).send({ message: "hashed URL link has expired" })
+                    } else {
+                        res.status(200).redirect(url)
+                    }
                 }
             })
             .catch(err => {
