@@ -28,6 +28,22 @@ class URLController {
                 res.status(500).send({ error: "Could not create URLObject in Mongo Databse" })
             })
     }
+
+    static getURL(req, res) {
+        const hashedURL = req.params.hashedURL
+        URLModel.find(hashedURL)
+            .then(doc => {
+                if (doc) {
+                    const { url } = doc
+                    res.status(200).redirect(url)
+                } else {
+                    res.status(404).send({ message: "No valid URL found for provided hashed URL" })
+                }
+            })
+            .catch(err => {
+                res.status(500).send({ error: err })
+            })
+    }
 }
 
 module.exports = URLController

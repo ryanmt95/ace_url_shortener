@@ -11,6 +11,10 @@ class URLModel {
         })
         return urlEntity.save()
     }
+
+    static find(hashedURL) {
+        return URLSchema.findOne({ hashedURL, hashedURL }).exec()
+    }
 }
 
 module.exports = URLModel
