@@ -20,11 +20,9 @@ class URLController {
         }
         URLModel.create(urlObject)
             .then(result => {
-                console.log(result)
                 res.status(200).send({ hashedURL: hashedURL })
             })
             .catch(err => {
-                console.log(err)
                 res.status(500).send({ error: "Could not create URLObject in Mongo Databse" })
             })
     }
